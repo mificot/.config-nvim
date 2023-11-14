@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
 
     use('lewis6991/gitsigns.nvim')
 
+    use { "akinsho/toggleterm.nvim", tag = '*' }
+
     -- lsp-zero
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -41,6 +43,10 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
+
+    use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+        require('git-conflict').setup()
+    end }
 
     use {
         'jose-elias-alvarez/null-ls.nvim'
